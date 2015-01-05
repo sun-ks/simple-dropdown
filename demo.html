@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>demo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/dropdown_menu.js"></script>
+    <link href="css/demo.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <div class="user-join--search">
+      <button class="dropdown">click me</button>
+      <div class="dropdown-inner">
+        <div class="dropdown-inner-inner--cont">
+          <p class="dropdown-text">При input:focus dropdown остается открытым.</p>
+          <form action="/search/" method="get">
+            <input class="dropdown-input" type="text" name="q" placeholder="text input">
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="user-join--search">
+      <button class="dropdown">Что здесь?!</button>
+      <div class="dropdown-inner">
+        <div class="dropdown-inner-inner--cont">
+          <p class="dropdown-text">Я простой текст</p>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
