@@ -1,12 +1,12 @@
-function DropdownMenu(options) {
+(function( $ ){
 
-    var self = this,
-        elem = options.elem,
-        elem_inner = elem.next();
+  $.fn.myPlugin = function() {
+    
+    var elem_inner = this.next(),
+    self = this;
 
     elem_inner.hide();
-    elem.click(function () { console.log('click'); console.log(this);
-
+    $(this).click(function () {
 
         if ($(this).hasClass("open-drop")) {
             $(this).next().hide();
@@ -24,19 +24,19 @@ function DropdownMenu(options) {
         return false
     });
 
-    elem.mouseup(function () {
+    this.mouseup(function () {
         return false
     });
 
     // Textarea without editing.
     $(document).mouseup(function () {
-        elem.removeClass('open-drop');
+        self.removeClass('open-drop');
         elem_inner.hide();
     });
-}
+
+  };
+})( jQuery );
 
 $(document).ready(function () {
-    new DropdownMenu({
-        elem: $('.dropdown')
-    });
+    $('.dropdown').myPlugin();
 });
