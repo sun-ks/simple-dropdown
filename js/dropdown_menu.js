@@ -5,21 +5,25 @@
     var elem_inner = this.next(),
     self = this,
     settings = $.extend( {
-      'fadeIn_time'  : 0,
-      'fadeOut_time' : 500,
+      'fadeIn_time'  : 200,
+      'fadeOut_time' : 200,
+      'evennts': 'click'
     }, options ); 
-
+    
+    /* hide dropdown */
     elem_inner.fadeOut(settings.fadeOut_time);
-    self.click(function () {
 
+    this.on(settings.evennts, onTitleClick);
+
+    function onTitleClick(){
         if ($(this).hasClass("open-drop")) {
             $(this).next().fadeOut(settings.fadeOut_time);
             $(this).removeClass('open-drop');
         } else {
-            $(this).next().fadeIn(options.fadeIn_time);
+            $(this).next().fadeIn(settings.fadeIn_time);
             $(this).addClass('open-drop');
         }
-    });
+    }
 
     // Mouseup textarea false
     elem_inner.mouseup(function () {
